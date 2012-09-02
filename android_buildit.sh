@@ -1,0 +1,8 @@
+#!/bin/sh
+
+KDIR=/BUILD/KERNEL/hox_kernel
+TCHAIN=/BUILD/CM10/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+
+
+make  -C mac80211/compat_wl12xx CONFIG_COMPAT_NETWORK_MODULES=n CONFIG_COMPAT_BLUETOOTH_MODULES=n CONFIG_COMPAT_BLUETOOTH=n \
+KLIB=$KDIR KLIB_BUILD=$KDIR ARCH="arm" CROSS_COMPILE=$TCHAIN
